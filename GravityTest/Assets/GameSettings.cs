@@ -6,9 +6,20 @@ using UnityEngine;
 public class GameSettings : ScriptableObject
 {
 
+    [Header("Player Setup")]
+    //by default
+    [SerializeField]
+    float playerLeanForce = 25.5f;
+
+    [Header("Planet Setup")]
+    public Color[] skyColors;
+
+    
+
     float planetGravity;
     float ballHit;
-    public Color[] skyColors;
+    Vector3 startPosPlayer;
+    
 
     public float PlanetGravity {
 
@@ -23,5 +34,18 @@ public class GameSettings : ScriptableObject
         set { ballHit = value; }
 
     }
-    
+
+    public Vector3 StartPosPlayer
+    {
+
+        get { return startPosPlayer; }
+        set { startPosPlayer = value; }
+
+    }
+
+    public float GetPlayerLeanForce {
+
+        get { return playerLeanForce; }
+
+    }
 }

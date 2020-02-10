@@ -13,10 +13,11 @@ public class GameController : MonoBehaviour
         LevelJupiter,
         MainMenu,
 
-
     }
 
     public GameState gameState;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +27,9 @@ public class GameController : MonoBehaviour
 
         gameState = GameState.MainMenu;
 
+        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
