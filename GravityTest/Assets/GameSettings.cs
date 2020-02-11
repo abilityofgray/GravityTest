@@ -15,7 +15,10 @@ public class GameSettings : ScriptableObject
     public Color skyColorEarth;
     public Color skyColorMoon;
     public Color skyColorJupiter;
-    
+
+    public float EarthGravity;
+    public float MoonGravity;
+    public float JupiterGravity;
 
     float planetGravity;
     float ballHit;
