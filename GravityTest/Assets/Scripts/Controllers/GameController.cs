@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
 
     Camera mainCamera;
     Player player;
+
+    Platform[] platformObject;
     
     void Start()
     {
@@ -41,6 +43,7 @@ public class GameController : MonoBehaviour
 
         LevelInit(gameState);
 
+        FindAllPlatformObject();
     }
 
     public void LevelInit(GameState switchState)
@@ -59,7 +62,10 @@ public class GameController : MonoBehaviour
                 player.PlayerToStartPos();
                 player.PlayerSetGravity(gameSettings.GravityAccelerationEarth);
                 player.GetComponent<Rigidbody2D>().simulated = true;
-                
+
+                ResetPlatformColor();
+
+
                 break;
 
             case GameState.LevelMoon:
@@ -72,7 +78,9 @@ public class GameController : MonoBehaviour
                 player.PlayerToStartPos();
                 player.PlayerSetGravity(gameSettings.GravityAccelerationMoon);
                 player.GetComponent<Rigidbody2D>().simulated = true;
-                
+
+                ResetPlatformColor();
+
                 break;
 
             case GameState.LevelJupiter:
@@ -85,7 +93,9 @@ public class GameController : MonoBehaviour
                 player.PlayerToStartPos();
                 player.PlayerSetGravity(gameSettings.GravityAccelerationJupiter);
                 player.GetComponent<Rigidbody2D>().simulated = true;
-                
+
+                ResetPlatformColor();
+
                 break;
 
             case GameState.MainMenu:
@@ -102,4 +112,19 @@ public class GameController : MonoBehaviour
 
     }
 
+    void FindAllPlatformObject() {
+
+        platformObject = FindObjectsOfType<Platform>();
+
+    }
+
+    void ResetPlatformColor() {
+
+        foreach (Platform plat in platformObject) {
+
+            plat.ResetToDefaultColor();
+
+        }
+
+    }
 }

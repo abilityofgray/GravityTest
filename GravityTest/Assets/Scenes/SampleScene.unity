@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.16788375, g: 0.21073635, b: 0.28994125, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -247,7 +247,6 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0.36474562, a: 1}
   - {r: 0.46659112, g: 1, b: 0, a: 1}
   - {r: 0, g: 1, b: 0.34172034, a: 1}
-  gameSettings: {fileID: 11400000, guid: 0e7bfef077428734f98637277eb7e6e7, type: 2}
 --- !u!1 &43333938
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,7 +937,6 @@ MonoBehaviour:
   - {r: 0.8380986, g: 0.042452812, b: 1, a: 1}
   - {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
   - {r: 0.5849056, g: 0, b: 0.022901705, a: 1}
-  gameSettings: {fileID: 11400000, guid: 0e7bfef077428734f98637277eb7e6e7, type: 2}
 --- !u!1 &320774273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,7 +1134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3162e8dc718e3c04a938f2a757aa7542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSettings: {fileID: 11400000, guid: 0e7bfef077428734f98637277eb7e6e7, type: 2}
 --- !u!1 &331898498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,7 +2822,6 @@ MonoBehaviour:
   - {r: 1, g: 0.14075148, b: 0, a: 1}
   - {r: 0.8867924, g: 0, b: 0.5754743, a: 1}
   - {r: 0.08962262, g: 0.1681716, b: 1, a: 1}
-  gameSettings: {fileID: 11400000, guid: 0e7bfef077428734f98637277eb7e6e7, type: 2}
 --- !u!1 &1882035063
 GameObject:
   m_ObjectHideFlags: 0

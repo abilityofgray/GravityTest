@@ -8,15 +8,16 @@ public class Platform : MonoBehaviour
 
     public Color[] colors;
 
-    int touchCount;
 
+    int touchCount;
+    Color defaultColor;
     SpriteRenderer spriteRender;
 
     void Start()
     {
 
         spriteRender = GetComponent<SpriteRenderer>();
-
+        defaultColor = spriteRender.color;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -47,6 +48,12 @@ public class Platform : MonoBehaviour
             spriteRender.color = colors[touchCount];
             
         }
+
+    }
+
+    public void ResetToDefaultColor() {
+
+        spriteRender.color = defaultColor;
 
     }
 }
