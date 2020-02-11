@@ -12,8 +12,6 @@ public class Platform : MonoBehaviour
 
     SpriteRenderer spriteRender;
 
-    public GameSettings gameSettings;
-
     void Start()
     {
 
@@ -28,8 +26,10 @@ public class Platform : MonoBehaviour
 
             //color change by random
             //spriteRender.color = colors[Random.Range(0, colors.Length)];
-            gameSettings.BallHit++;
+
+            GameController.instance.gameSettings.BallHit++;
             GameUI.instance.UpdateBallHit();
+
             //color change by elements sequential
             if (touchCount >= colors.Length - 1)
             {

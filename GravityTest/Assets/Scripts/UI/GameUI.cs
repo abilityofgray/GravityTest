@@ -12,7 +12,7 @@ public class GameUI : MonoBehaviour
     public RawImage background;
     public RectTransform mainMenu;
 
-    public GameSettings gameSettings;
+    
     public bool ResetBallHitAtStart;
 
     void Start()
@@ -37,14 +37,14 @@ public class GameUI : MonoBehaviour
 
     public void UpdateBallHit() {
 
-        ballHit.text ="ballHit: " + gameSettings.BallHit.ToString();
+        ballHit.text = "BallHit : " + GameController.instance.gameSettings.BallHit.ToString();
 
     }
 
     public void ResetBallHit() {
 
-        gameSettings.BallHit = 0;
-        ballHit.text = "ballHit: " + gameSettings.BallHit.ToString();
+        GameController.instance.gameSettings.BallHit = 0;
+        ballHit.text = "BallHit : " + GameController.instance.gameSettings.BallHit.ToString();
 
     }
 }

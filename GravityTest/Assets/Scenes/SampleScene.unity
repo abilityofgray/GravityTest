@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ballHit
+  m_text: 'BallHit
 
 '
   m_isRightToLeft: 0

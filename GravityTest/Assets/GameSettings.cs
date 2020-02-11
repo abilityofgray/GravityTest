@@ -55,4 +55,11 @@ public class GameSettings : ScriptableObject
         get { return playerLeanForce; }
 
     }
+
+    /*
+     * 
+     * TODO: one method to get planet settings
+     * 
+     * 
+     * */
 }
