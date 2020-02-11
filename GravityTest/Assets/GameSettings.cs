@@ -11,9 +11,10 @@ public class GameSettings : ScriptableObject
     [SerializeField]
     float playerLeanForce = 25.5f;
 
-    [Header("Planet Setup")]
-    public Color[] skyColors;
-
+    [Header("Planets Setup")]
+    public Color skyColorEarth;
+    public Color skyColorMoon;
+    public Color skyColorJupiter;
     
 
     float planetGravity;
