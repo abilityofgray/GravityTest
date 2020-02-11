@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private float forceToMove;
     Rigidbody2D rigidBody2D;
 
-    GameSettings gameSettings;
+    public GameSettings gameSettings;
 
     Vector3 movePoint;
 
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     {
 
         rigidBody2D = GetComponent<Rigidbody2D>();
-
+        
     }
 
     void Update()
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
             movePoint.z = transform.position.z;
             
             Vector3 moveVector = transform.position - movePoint;
-            rigidBody2D.AddForce(-moveVector * forceToMove, ForceMode2D.Force);
+            rigidBody2D.AddForce(-moveVector * gameSettings.GetPlayerLeanForce, ForceMode2D.Force);
 
         }
 
@@ -41,15 +41,14 @@ public class Player : MonoBehaviour
 
         transform.position = gameSettings.StartPosPlayer;
         forceToMove = gameSettings.GetPlayerLeanForce;
+        rigidBody2D.velocity = Vector2.zero;
 
     }
 
-    public void PlayerSetGravity() {
+    public void PlayerSetGravity(float gravity) {
 
-        /*
-        rigidBody2D.gravityScale;
-        rigidBody2D.mass;
-        */
+        Vector2 gravityVector = new Vector2(0, -gravity);
+        Physics2D.gravity = gravityVector;
 
     }
 }

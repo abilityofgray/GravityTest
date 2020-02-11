@@ -8,20 +8,43 @@ public class GameUI : MonoBehaviour
 {
     public static GameUI instance = null;
 
-    // Start is called before the first frame update
     public TextMeshProUGUI ballHit;
     public RawImage background;
+    public RectTransform mainMenu;
+
+    public GameSettings gameSettings;
+    public bool ResetBallHitAtStart;
 
     void Start()
     {
 
         if (instance == null) instance = this;
+
+        if (!ResetBallHitAtStart)
+        {
+
+            UpdateBallHit();
+
+        }
+        else {
+
+            ResetBallHit();
+
+        }
         
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void UpdateBallHit() {
+
+        ballHit.text ="ballHit: " + gameSettings.BallHit.ToString();
+
+    }
+
+    public void ResetBallHit() {
+
+        gameSettings.BallHit = 0;
+        ballHit.text = "ballHit: " + gameSettings.BallHit.ToString();
+
     }
 }
