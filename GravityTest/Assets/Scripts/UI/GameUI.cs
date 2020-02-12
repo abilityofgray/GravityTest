@@ -23,8 +23,8 @@ public class GameUI : MonoBehaviour
         if (!ResetBallHitAtStart)
         {
 
-            UpdateBallHit();
-
+            LoadSavedData();
+            
         }
         else {
 
@@ -33,17 +33,32 @@ public class GameUI : MonoBehaviour
         }
         
 
+
     }
 
     public void UpdateBallHit() {
 
-        ballHit.text = "BallHit : " + gameSettings.BallHit.ToString();
+        GetBallHitToText();
 
     }
 
     public void ResetBallHit() {
 
         gameSettings.BallHit = 0;
+        GetBallHitToText();
+
+    }
+
+    //TODO: refactor to separeta class
+    public void LoadSavedData() {
+
+        gameSettings.BallHit = PlayerPrefs.GetFloat("BallHit");
+        GetBallHitToText();
+
+    }
+
+    void GetBallHitToText() {
+
         ballHit.text = "BallHit : " + gameSettings.BallHit.ToString();
 
     }

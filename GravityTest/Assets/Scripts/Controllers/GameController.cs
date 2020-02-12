@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
     public static GameController instance = null;
     public GameSettings gameSettings;
     public GameObject respawnPoint;
+    public bool SavePlayerPointInPlayerPref;
     
     public enum GameState {
 
@@ -103,6 +104,9 @@ public class GameController : MonoBehaviour
                 gameState = GameState.MainMenu;
                 GameUI.instance.mainMenu.gameObject.SetActive(true);
 
+                if (SavePlayerPointInPlayerPref)
+                    SavePlayerData();
+
                 player.GetComponent<Rigidbody2D>().simulated = false;
                 player.PlayerToStartPos();
                 
@@ -125,6 +129,26 @@ public class GameController : MonoBehaviour
             plat.ResetToDefaultColor();
 
         }
+
+    }
+
+    private void OnApplicationQuit()
+    {
+
+        if (SavePlayerPointInPlayerPref)
+            SavePlayerData();
+
+    }
+
+    public void SavePlayerData() {
+
+        PlayerPrefs.SetFloat("BallHit", gameSettings.BallHit);
+
+    }
+
+    public void LoadSavePlayerData() {
+
+        gameSettings.BallHit = PlayerPrefs.GetFloat("BallHit");
 
     }
 }
